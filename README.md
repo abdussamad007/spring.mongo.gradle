@@ -17,8 +17,9 @@
     * For SpringBoot used https://start.spring.io/
     
     * to git it running - do git clone https://github.com/abdussamad007/spring.mongo.gradle.git
-    cd spring.mongo.gradle
-    gradle clean build/ gradle clean buil -x test  , please ensure your mongo is up and running else application will not run.
+    
+    * cd spring.mongo.gradle
+    * gradle clean build/ gradle clean buil -x test  , please ensure your mongo is up and running else application will not run.
     
     
 Once Application run successful, you will see the below output in the console.
