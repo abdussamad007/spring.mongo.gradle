@@ -16,3 +16,4 @@
     ```
     * For SpringBoot used https://start.spring.io/
     
+    * to git it running - do git clone 
