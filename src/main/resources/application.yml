@@ -1,10 +1,10 @@
-
+#passpwrd root encoded to uHiKOtpKgrNmsVNbtiYS2g==
 spring:
   data:
     mongodb:
       authentication-database: admin
       username: root
-      password: root
+      password: uHiKOtpKgrNmsVNbtiYS2g==
       database: db_test
       port: 27017
       host: localhost

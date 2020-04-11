@@ -1,6 +1,7 @@
 package com.abdus.spring.mongo.gradle.example.config;
 
 
+import com.abdus.spring.mongo.gradle.example.common.AESUtil;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
@@ -39,7 +40,7 @@ public class MongoConfig  extends AbstractMongoClientConfiguration {
     String authDatabase = mongoProperties.getAuthenticationDatabase();
 
     MongoClientSettings settings = MongoClientSettings.builder()
-      .credential(MongoCredential.createCredential(user, authDatabase, password))
+      .credential(MongoCredential.createCredential(user, authDatabase, AESUtil.decrypt(String.valueOf(password),AESUtil.secretKey).toCharArray()))
       .applyToClusterSettings(builder  -> {
         builder.hosts(singletonList(new ServerAddress(host, port)));
       })
