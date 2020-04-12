@@ -4,7 +4,8 @@
   * Ensure you have MongoDB up and running. To install and configure MongoDB , follow the instructions in https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/ 
   * Ensure you have the user id and db created . I used the following scripts from the Mongo Client 
     Robo3t    
-    
+  * Branch RSA-password-encryption is used to show the mongoDB database password encryption using RSA algorithm
+  * Branch AES-password-encryption is  used to show the mongoDB database password encryption using AES algorithm
     ```JSON 
     use admin
 
