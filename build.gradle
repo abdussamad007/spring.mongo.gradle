@@ -34,6 +34,13 @@ dependencies {
   testCompileOnly 'org.projectlombok:lombok:1.18.12'
   testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
+  // https://mvnrepository.com/artifact/org.jasypt/jasypt
+  compile group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
+
+  // https://mvnrepository.com/artifact/commons-codec/commons-codec
+  compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
+
+
 }
 
 test {

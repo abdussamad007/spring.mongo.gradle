@@ -1,7 +1,7 @@
 package com.abdus.spring.mongo.gradle.example.config;
 
 
-import com.abdus.spring.mongo.gradle.example.common.AESUtil;
+import com.abdus.spring.mongo.gradle.example.common.RSAUtil;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
@@ -14,6 +14,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import java.util.Base64;
 
 import static java.util.Collections.singletonList;
 
@@ -39,12 +41,24 @@ public class MongoConfig  extends AbstractMongoClientConfiguration {
     int port = mongoProperties.getPort();
     String authDatabase = mongoProperties.getAuthenticationDatabase();
 
-    MongoClientSettings settings = MongoClientSettings.builder()
-      .credential(MongoCredential.createCredential(user, authDatabase, AESUtil.decrypt(String.valueOf(password),AESUtil.secretKey).toCharArray()))
-      .applyToClusterSettings(builder  -> {
-        builder.hosts(singletonList(new ServerAddress(host, port)));
-      })
-      .build();
+
+
+    MongoClientSettings settings = null;
+    try {
+      String decryptedText =  RSAUtil.decrypt(Base64.getDecoder().decode(String.valueOf(password)), "private.key");
+      System.out.println("-----------------------decryptedText----" + decryptedText);
+      settings = MongoClientSettings.builder()
+        //.credential(MongoCredential.createCredential(user, authDatabase, AESUtil.decrypt(String.valueOf(password),AESUtil.secretKey).toCharArray()))
+        //.credential(MongoCredential.createCredential(user, authDatabase, Base64EncodeUtil.decodePassword(String.valueOf(password)).toCharArray()))
+        .credential(MongoCredential.createCredential(user, authDatabase, decryptedText.toCharArray()))
+
+        .applyToClusterSettings(builder  -> {
+          builder.hosts(singletonList(new ServerAddress(host, port)));
+        })
+        .build();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
     return MongoClients.create(settings);
   }

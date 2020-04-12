@@ -1,10 +1,13 @@
-#passpwrd root encoded to uHiKOtpKgrNmsVNbtiYS2g==
+#passpwrd root encrypted  to uHiKOtpKgrNmsVNbtiYS2g==  -> use it when use the AES encryption
+#password root encoded to cm9vdA==  -> use it when use the Base64EncodeUtil.
+#password root encoded to hCdNa0j/dZ+z8p4l5hXsKoZ2Coay3+bKWl4+T4EtP1rDRmFMxUiK5Jv74jibHJbsvxykvKlAACfV2dwNl6i+08Fr/N9brM9Qe7Fjx9GObVv8286ddkjZczpcRnnH3nmg6VbKMrGNS2qISp2dULYkWiiF1XVVARcsJ0BdyA8tiXD2b0lZSqYPFS2VXbC8l78ku1nRNxsIPi6ej8s7NswxqJJIuPleBoRxVjh1heLr0VhsYGW1fubvur5dmXXYGOMyLPg5fJri5Scp7SGhUt2mi7sZe5pgM7ICYyDOq1zwuhtQuQD7GdY3iV5LPXbssy1PWZQeJsxVdOS4lTwlJyEoPvyX3R3UfIn5/mpVDk1yQYhQotLD1BSR7DeI1W8BDjw52v6+ehxfo84SdAguVOmSa3mzWs8ZkE8x0iGJK4YVG+EdSf7J1SLlCn7Wm12ardB/AKOixPRwYKfbNou/Pn3hYiuVejPsfYaIKvv0Tv/D0swaJuwXoYlN4z6dcykIioT8thyG7DtdxiOSoFBzCE51u+DwPjth+of3gX5URJqDInHj6Mui+xgy/LGAtcwCQ9X3zHF6WcL4kcafYfprGwSv2oD3KQT0zf1jeA1b6L7Z9XwcE/B35O26wpKDglquFVKQtg71AKyW1QZgMnVFtfr4rX+G5ug/Jpyfr8rfox8/b2I=
+#using RSA
 spring:
   data:
     mongodb:
       authentication-database: admin
       username: root
-      password: uHiKOtpKgrNmsVNbtiYS2g==
+      password: hCdNa0j/dZ+z8p4l5hXsKoZ2Coay3+bKWl4+T4EtP1rDRmFMxUiK5Jv74jibHJbsvxykvKlAACfV2dwNl6i+08Fr/N9brM9Qe7Fjx9GObVv8286ddkjZczpcRnnH3nmg6VbKMrGNS2qISp2dULYkWiiF1XVVARcsJ0BdyA8tiXD2b0lZSqYPFS2VXbC8l78ku1nRNxsIPi6ej8s7NswxqJJIuPleBoRxVjh1heLr0VhsYGW1fubvur5dmXXYGOMyLPg5fJri5Scp7SGhUt2mi7sZe5pgM7ICYyDOq1zwuhtQuQD7GdY3iV5LPXbssy1PWZQeJsxVdOS4lTwlJyEoPvyX3R3UfIn5/mpVDk1yQYhQotLD1BSR7DeI1W8BDjw52v6+ehxfo84SdAguVOmSa3mzWs8ZkE8x0iGJK4YVG+EdSf7J1SLlCn7Wm12ardB/AKOixPRwYKfbNou/Pn3hYiuVejPsfYaIKvv0Tv/D0swaJuwXoYlN4z6dcykIioT8thyG7DtdxiOSoFBzCE51u+DwPjth+of3gX5URJqDInHj6Mui+xgy/LGAtcwCQ9X3zHF6WcL4kcafYfprGwSv2oD3KQT0zf1jeA1b6L7Z9XwcE/B35O26wpKDglquFVKQtg71AKyW1QZgMnVFtfr4rX+G5ug/Jpyfr8rfox8/b2I=
       database: db_test
       port: 27017
       host: localhost

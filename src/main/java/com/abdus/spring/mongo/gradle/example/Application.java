@@ -30,15 +30,15 @@ public class Application implements CommandLineRunner {
   public void run(String... args) throws Exception {
 
 	  List<Employee> employeeList = new ArrayList<>();
-    Employee employee1 = Employee.builder().empId("ABC123").name("Abdus").age(40).salary(123456.00).build();
+    Employee employee1 = Employee.builder().empId("PQR123").name("Abhishek").age(10).salary(9999999.00).build();
     employeeList.add(employee1);
 
-    Department department1 = Department.builder().name("Physics").desc("Dept of Physics").employees(employeeList).build();
+    Department department1 = Department.builder().name("MBA").desc("Dept of MBA").employees(employeeList).build();
     departmentRepository.save(department1);
 
     System.out.println("------department Saved -------" + department1.toString());
 
-   List<Department> deptList =  departmentRepository.findDepartmentByName("Physics");
+   List<Department> deptList =  departmentRepository.findDepartmentByName("MBA");
 
   deptList.forEach(dept->System.out.println(dept.toString()));
 
